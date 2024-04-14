@@ -19,6 +19,8 @@ services:
       - .:/app  # Mount current directory into the container
     environment:
       - C_FORCE_ROOT=true  # Allow running Celery worker as root (for development)
+      - BASE_URL=${BASE_URL}
+      - API_KEY=${API_KEY}
 
   app:
     build: .
