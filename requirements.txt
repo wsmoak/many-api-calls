@@ -1,0 +1,2 @@
+celery==5.1.2
+rabbitmq==0.2.0
