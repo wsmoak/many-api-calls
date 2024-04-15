@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   rabbitmq:
     image: rabbitmq:3-management
@@ -24,6 +22,8 @@ services:
 
   app:
     build: .
+    depends_on:
+      - celery-worker
     volumes:
       - .:/app  # Mount current directory into the container
     command: python main.py  # Command to run your application
