@@ -1,0 +1,22 @@
+# helm/templates/celery-worker.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: celery-worker
+spec:
+  selector:
+    matchLabels:
+      app: celery-worker
+  template:
+    metadata:
+      labels:
+        app: celery-worker
+    spec:
+      containers:
+        - name: celery-worker
+          image: {{ .Values.celeryWorker.image }}
+          command: ["celery", "-A", "tasks", "worker", "--loglevel=info"]
+          env:
+            - name: C_FORCE_ROOT
+              value: "true"

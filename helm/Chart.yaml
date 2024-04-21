@@ -1,0 +1,6 @@
+# helm/Chart.yaml
+
+apiVersion: v2
+name: many-api-calls
+version: 0.1.0
+description: A Helm chart for deploying a Python app with Celery and RabbitMQ

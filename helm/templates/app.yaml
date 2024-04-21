@@ -1,0 +1,19 @@
+# helm/templates/app.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+        - name: app
+          image: {{ .Values.app.image }}
+          command: ["python", "main.py"]

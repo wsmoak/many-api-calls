@@ -1,0 +1,12 @@
+# helm/values.yaml
+
+rabbitmq:
+  image: rabbitmq:3-management
+  username: guest
+  password: guest
+
+celeryWorker:
+  image: localhost:5000/many-api-calls-celery-worker:latest
+
+app:
+  image: localhost:5000/many-api-calls-app:latest
